@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>LinguaLinker</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://kit.fontawesome.com/f8ddf9854a.js" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <meta name="description" content="We introduce LinguaLinker, A Unified Framework for Audio-Driven Video Generation Tasks.">
+     <meta name="keywords" content="LinguaLinker, Audio-Driven, VideoGen, video, audio, artificial intelligence, AI, AIGC">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> LinguaLinker: Audio-Driven Portraits Animation with Implicit Facial Control Enhancement</title>
+
+    <link rel="icon" href="static/images/icon.png">
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="stylesheet" href="static/css/bulma.min.css">
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="static/css/index.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="static/js/fontawesome.all.min.js"></script>
+    <script defer src="static/js/fontawesome.all.min.js"></script>
+    <script src="static/js/bulma-carousel.min.js"></script>
+    <script src="static/js/bulma-slider.min.js"></script>
+    <script src="static/js/index.js"></script>
+</head>
+
+<body>
+<section class="hero">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                    <h1 class="title is-1 publication-title" style="display: flex; align-items: center;">
+                        <img src="static/images/icon.png" alt="LinguaLinker Icon" style="flex: 0 0 auto; height: 2em; margin-right: 10px;">
+                        <span style="flex: 1 1 auto;">LinguaLinker: Audio-Driven Portraits Animation with Implicit Facial Control Enhancement</span>
+                    </h1>
+                    <div class="is-size-5 publication-authors">
+                        <!-- Paper authors -->
+                            <span class="author-block">
+                                <a href="https://github.com/TencentQQGYLab/LinguaLinker">Rui Zhang*</a>,
+                            </span>
+                            <span class="author-block">
+                                <a href="https://github.com/fangyixiao18">Yixiao Fang*</a>,
+                            </span>
+                            <span class="author-block">
+                                <a href="https://github.com/Zane0227">Zhengnan Lu</a>,
+                            </span>
+                            <span class="author-block">
+                                <a href="https://openreview.net/profile?id=~Pei_Cheng1">Pei Cheng</a>,
+                            </span>
+                            <span class="author-block">
+                                <a href="https://github.com/TencentQQGYLab/LinguaLinker">Zebiao Huang</a>,
+                            </span>
+                            <span class="author-block">
+                                <a href="https://openreview.net/profile?id=~BIN_FU2">Bin Fu</a>
+                            </span>
+                    </div>
+                    <div class="is-size-5 publication-authors">
+                        <span class="author-block"><small>Tencent</small></span>
+                        <br>
+                        <span class="author-block"><small>*Equal contribution</small></span>
+                        <br>
+                    </div>
+                    <div class="column has-text-centered">
+                        <div class="publication-links">
+                            <!-- ArXiv abstract Link -->
+                            <span class="link-block">
+                                <a href="https://github.com/TencentQQGYLab/LinguaLinker" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                                    <span class="icon"><i class="ai ai-arxiv"></i></span>
+                                    <span>arXiv(coming soon)</span>
+                                </a>
+                            </span>
+                            <!-- Github link -->
+                            <span class="link-block">
+                                <a href="https://github.com/TencentQQGYLab/LinguaLinker" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                                    <span class="icon"><i class="fab fa-github"></i></span>
+                                    <span>Repository</span>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Demo Video -->
+<section class="hero">
+    <div class="hero-body">
+        <div class="container is-max-desktop has-text-centered">
+            <div class="columns is-centered">
+                <div class="column is-full">
+
+                    <!-- Video here -->
+                    <video width="100%" controls play muted loop>
+                        <source src="static/videos/demovideo/controlvideo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                        <div style="width: 100%;text-align: left; margin-bottom: 2px; background-color: #FFFFE0; font-family: 'Permanent Marker', cursive; white-space:pre;">               👨:low 👄:<span style="color: darkred;">high</span> 👀:low                   👨:low 👄:<span style="color: darkred;">high</span> 👀:<span style="color: darkred;">high</span>                      👨:<span style="color: darkred;">high</span> 👄:low 👀:low                       👨:<span style="color: darkred;">high</span> 👄:<span style="color: darkred;">high</span> 👀:<span style="color: darkred;">high</span> </div>
+                </div>
+                </div>
+                    <video width="100%" controls play muted loop>
+                        <source src="static/videos/demovideo/demovideo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                        <div style="width: 100%;text-align: left; margin-bottom: 2px; background-color: #FFFFE0; font-family: 'Permanent Marker', cursive; white-space:pre;">                 Reference Image                             Chinese                                              English                                                 French </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Method -->
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+  <h1 class="title is-1 mmmu">
+    <img src="static/images/icon.png" style="width:1em;vertical-align: middle" alt="Logo"/>
+    <span class="mmmu" style="vertical-align: middle">LinguaLinker</span>
+  </h1>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <!-- <div class="column is-full-width has-text-centered"> -->
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+            <p>
+                This study delves into the intricacies of synchronizing facial dynamics with multilingual audio inputs, focusing on the creation of visually compelling, time-synchronized animations through diffusion-based techniques. Diverging from traditional parametric models for facial animation, our approach adopts a holistic diffusion-based framework that integrates audio-driven visual synthesis to enhance the synergy between auditory stimuli and visual responses. We process audio features separately and derive the corresponding control gates, which implicitly govern the enhancement of movements in lips, eyes, and head, irrespective of the portrait’s origin. The advanced audio-driven visual synthesis mechanism provides nuanced control over a diverse range of expressions and postures, allowing for a more tailored and effective portrayal of distinct personas across different languages. The significant improvements in the fidelity of animated portraits, the accuracy of lip-syncing, and the richness of motion variations achieved by our method render it a versatile tool for animating any portrait in any language.
+            </p>
+            <div class="box m-1">
+                <div class="content has-text-centered">
+                    <img src="static/images/banner.png" width="100%" alt="LinguaLinker" />
+                </div>
+            </div>
+        </div>
+</section>
+<section class="section">
+    <div class="container">
+    <div class="columns is-centered has-text-centered">
+        <!-- <div class="column is-full-width has-text-centered"> -->
+        <div class="column is-four-fifths">
+        <h2 class="title is-3">Framework</h2>
+        <div class="content has-text-justified">
+            <div class="box m-1">
+                <div class="content has-text-centered">
+                    <img src="static/images/framework.png" width="100%" alt="LinguaLinker" />
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- Facial Control Enhancement -->
+<section class="hero is-light is-small">
+    <div class="hero-body has-text-centered">
+      <h1 class="title is-1 mmmu">Control Enhancement</h1>
+    </div>
+</section>
+<section class="video-grid">
+    <div class="container">
+       <div class="content has-text-justified">
+         <h2 class="title is-3" style="color: rgb(10, 1, 137);">Implicit Frequency Control</h2>
+           <p>
+                As LinguaLinker implicitly split the control signal to head, mouth and eyes, we could adjust the corresponding parameters to influence the generated portraits, separately control the motion range and motion frequency of different regions related to the character.
+           </p>
+
+       </div>
+    <!-- Row 1 -->
+    <div style="display: flex; justify-content: space-between; margin-bottom: 20px; margin-top: 20px;">
+      <div style="width: 90%; text-align: left;">
+        <div style="width: 90%; text-align: left; margin-bottom: 2px; background-color: #FFFFE0; font-family: 'Permanent Marker', cursive; white-space:pre;"> 👨:low 👄:<span style="color: darkred;">high</span> 👀:low                                 👨:low 👄:<span style="color: darkred;">high</span> 👀:<span style="color: darkred;">high</span>                               👨:<span style="color: darkred;">high</span> 👄:low 👀:low                                👨:<span style="color: darkred;">high</span> 👄:<span style="color: darkred;">high</span> 👀:<span style="color: darkred;">high</span> </div>
+            <video play controls muted loop playsinline width="90%"> 
+                <source src="./static/videos/Control/control1.mp4" type="video/mp4">-
+            </video>
+      </div>
+    </div>
+    <!-- Row 2 -->
+    <div style="display: flex; justify-content: space-between; margin-bottom: 20px; margin-top: 20px;">
+        <div style="width: 90%; text-align: left;">
+          <div style="width: 90%; text-align: left; margin-bottom: 2px; background-color: #FFFFE0; font-family: 'Permanent Marker', cursive; white-space:pre;"> 👨:low 👄:<span style="color: darkred;">high</span> 👀:low                               👨:low 👄:<span style="color: darkred;">high</span> 👀:<span style="color: darkred;">high</span>                               👨:<span style="color: darkred;">high</span> 👄:low 👀:low                                👨:<span style="color: darkred;">high</span> 👄:<span style="color: darkred;">high</span> 👀:<span style="color: darkred;">high</span> </div>
+            <video play controls muted loop playsinline width="90%">
+                <source src="./static/videos/Control/control2.mp4" type="video/mp4">-
+            </video>
+        </div>
+      </div>
+  </div>
+  </section>
+
+<!-- RESULTS SECTION -->
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+    <h1 class="title is-1 mmmu">Generated Videos</h1>
+  </div>
+</section>
+
+<!-- Multilingual -->
+<section class="video-grid">
+  <div class="container">
+     <div class="content has-text-justified">
+       <h2 class="title is-3" style="color: rgb(10, 1, 137);">Any portrait in any language</h2>
+     </div>
+  <!-- Row 1 -->
+  <div style="display: flex; justify-content: space-between; margin-bottom: 20px; margin-top: 20px;">
+    <div style="width: 45%; text-align: center;">
+        <div style="text-align: center; margin-bottom: 2px; background-color: #cbd0fb; font-family: 'Permanent Marker', cursive;">
+            French
+        </div>
+      <video play controls muted loop playsinline width="100%">
+          <source src="./static/videos/Multilingual/french.mp4" type="video/mp4">-
+      </video>
+    </div>
+    <div style="width: 45%; text-align: center;">
+        <div style="text-align: center; margin-bottom: 2px; background-color: #cbd0fb; font-family: 'Permanent Marker', cursive;">
+            English
+        </div>
+      <video play controls muted loop playsinline width="100%">
+        <source src="./static/videos/Multilingual/english.mp4" type="video/mp4">-
+      </video>
+    </div>
+  </div>
+  <!-- Row 2 -->
+  <div style="display: flex; justify-content: space-between; margin-bottom: 20px; margin-top: 20px;">
+    <div style="width: 45%; text-align: center;">
+        <div style="text-align: center; margin-bottom: 2px; background-color: #cbd0fb; font-family: 'Permanent Marker', cursive;">
+            Chinese
+        </div>
+      <video play controls muted loop playsinline width="100%">
+        <source src="./static/videos/Multilingual/chinese.mp4" type="video/mp4">-
+      </video>
+    </div>
+    <div style="width: 45%; text-align: center;">
+        <div style="text-align: center; margin-bottom: 2px; background-color: #cbd0fb; font-family: 'Permanent Marker', cursive;">
+            Japenese
+        </div>
+      <video play controls muted loop playsinline width="100%">
+        <source src="./static/videos/Multilingual/japenese.mp4" type="video/mp4">-
+      </video>
+    </div>
+  </div>
+  <!-- Row 3 -->
+  <div style="display: flex; justify-content: space-between; margin-bottom: 20px; margin-top: 20px;">
+    <div style="width: 45%; text-align: center;">
+        <div style="text-align: center; margin-bottom: 2px; background-color: #cbd0fb; font-family: 'Permanent Marker', cursive;">
+            Korean
+        </div>
+        <video play controls muted loop playsinline width="100%">
+          <source src="./static/videos/Multilingual/korean.mp4" type="video/mp4">-
+      </video>
+    </div>
+    <div style="width: 45%; text-align: center;">
+        <div style="text-align: center; margin-bottom: 2px; background-color: #cbd0fb; font-family: 'Permanent Marker', cursive;">
+            Thai
+        </div>
+        <video play controls muted loop playsinline width="100%">
+          <source src="./static/videos/Multilingual/thai.mp4" type="video/mp4">-
+      </video>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<!-- Talking -->
+<section class="video-grid" style="margin-top: 100px;">
+  <div class="container">
+     <div class="content has-text-justified">
+         <h2 class="title is-3" style="color: rgb(10, 1, 137);">Talking with Real character & Virtual Character</h2>
+     </div>
+  <!-- Row 1 -->
+  <div style="display: flex; justify-content: space-between; margin-bottom: 20px; margin-top: 20px;">
+    <div style="width: 45%; text-align: center;">
+        <video play controls muted loop playsinline width="100%" style="margin-top: 5px;">
+            <source src="./static/videos/Talking/talk1.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div style="width: 45%; text-align: center;">
+        <video play controls muted loop playsinline width="100%" style="margin-top: 5px;">
+            <source src="./static/videos/Talking/talk2.mp4" type="video/mp4">
+        </video>
+    </div>
+  </div>
+
+  <!-- Row 2 -->
+  <div style="display: flex; justify-content: space-between; margin-bottom: 20px; margin-top: 20px;">
+    <div style="width: 45%; text-align: center;">
+        <video play controls muted loop playsinline width="100%" style="margin-top: 5px;">
+            <source src="./static/videos/Talking/talk3.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div style="width: 45%; text-align: center;">
+        <video play controls muted loop playsinline width="100%" style="margin-top: 5px;">
+            <source src="./static/videos/Talking/talk4.mp4" type="video/mp4">
+        </video>
+    </div>
+  </div>
+
+    <!-- Row 3 -->
+    <div style="display: flex; justify-content: space-between; margin-bottom: 20px; margin-top: 20px;">
+        <div style="width: 45%; text-align: center;">
+            <video play controls muted loop playsinline width="100%" style="margin-top: 5px;">
+                <source src="./static/videos/Talking/talk5.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div style="width: 45%; text-align: center;">
+            <video play controls muted loop playsinline width="100%" style="margin-top: 5px;">
+                <source src="./static/videos/Talking/talk6.mp4" type="video/mp4">
+            </video>
+        </div>
+        </div>
+
+  </div>
+</div>
+</section>
+
+<!-- Singing -->
+<section class="video-grid" style="margin-top: 80px;">
+  <div class="container">
+     <div class="content has-text-justified">
+         <h2 class="title is-3" style="color: rgb(10, 1, 137);;">Singing in Lento Rhythm & Rapid Rhythm</h2>
+     </div>
+  <!-- Row 1 -->
+  <div style="display: flex; justify-content: space-between; margin-bottom: 20px; margin-top: 20px;">
+    <div style="width: 45%; text-align: center;">
+        <video play controls muted loop playsinline width="100%" style="margin-top: 5px;">
+            <source src="./static/videos/Singing/rap1.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div style="width: 45%; text-align: center;">
+        <video play controls muted loop playsinline width="100%" style="margin-top: 5px;">
+            <source src="./static/videos/Singing/rap2.mp4" type="video/mp4">
+        </video>
+    </div>
+  </div>
+
+  <!-- Row 2 -->
+  <div style="display: flex; justify-content: space-between; margin-bottom: 20px; margin-top: 20px;">
+    <div style="width: 45%; text-align: center;">
+        <video play controls muted loop playsinline width="100%" style="margin-top: 5px;">
+            <source src="./static/videos/Singing/song1.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div style="width: 45%; text-align: center;">
+        <video play controls muted loop playsinline width="100%" style="margin-top: 5px;">
+            <source src="./static/videos/Singing/song2.mp4" type="video/mp4">
+        </video>
+    </div>
+  </div>
+  </div>
+</div>
+</section>
+
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="content">
+
+                        <p>
+                            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a>                            project page. You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"
+                                target="_blank">Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+<style>
+  .hidden {
+      display: none;
+  }
+  .sortable:hover {
+      cursor: pointer;
+  }
+  .asc::after {
+      content: ' ↑';
+  }
+  .desc::after {
+      content: ' ↓';
+  }
+  #toggleButton {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    color: #555555;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition-duration: 0.4s;
+  }
+
+  #toggleButton:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); /* 鼠标悬停时的阴影效果 */
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+  }
+
+  th, td {
+      text-align: left;
+      padding: 8px;
+  }
+
+  th {
+      background-color: #f2f2f2;
+      border-bottom: 2px solid #ddd;
+  }
+
+  td:hover {background-color: #ffffff;}
+
+  .video-grid .video-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+</style>
+</html>
