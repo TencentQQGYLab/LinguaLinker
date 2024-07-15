@@ -24,7 +24,7 @@
 * Equal contributions
 </p>
 
-<a href='https://github.com/TencentQQGYLab/LinguaLinker'><img src='https://img.shields.io/badge/Project-Page-green'></a>
+<a href='https://tencentqqgylab.github.io/LinguaLinker/'><img src='https://img.shields.io/badge/Project-Page-green'></a>
 <a href='https://github.com/TencentQQGYLab/LinguaLinker'><img src='https://img.shields.io/badge/arXiv-Comming_soon-b31b1b.svg'></a>
 </div>
 
@@ -86,7 +86,7 @@ Official repository of "LinguaLinker: Audio-Driven Portraits Animation with Impl
 </table>
 
 
-More results are demonstrates in our [project page](https://github.com/TencentQQGYLab/LinguaLinker).
+More results are demonstrated in our [project page](https://tencentqqgylab.github.io/LinguaLinker/).
 
 # 🌟 Changelog
 
