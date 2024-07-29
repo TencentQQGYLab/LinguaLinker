@@ -25,7 +25,7 @@
 </p>
 
 <a href='https://tencentqqgylab.github.io/LinguaLinker/'><img src='https://img.shields.io/badge/Project-Page-green'></a>
-<a href='https://github.com/TencentQQGYLab/LinguaLinker'><img src='https://img.shields.io/badge/arXiv-Comming_soon-b31b1b.svg'></a>
+<a href='https://arxiv.org/abs/2407.18595'><img src='https://img.shields.io/badge/arXiv-Comming_soon-b31b1b.svg'></a>
 </div>
 
 Official repository of "LinguaLinker: Audio-Driven Portraits Animation with Implicit Facial Control Enhancement".
@@ -90,4 +90,5 @@ More results are demonstrated in our [project page](https://tencentqqgylab.githu
 
 # 🌟 Changelog
 
+- **[2024.7.29]** 🔥🔥 LinguaLinker: [Technical Report](https://arxiv.org/abs/2407.18595)\
 - **[2024.7.12]** Initial update
